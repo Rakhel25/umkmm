@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Kreatif - Produk Lokal Berkualitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        utama: '#D97706',
+                        sekunder: '#1E40AF',
+                        gelap: '#1F2937',
+                        terang: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+            }
+            .btn-anim {
+                @apply transition-all duration-300 hover:brightness-110 hover:scale-105;
+            }
+            .bg-overlay {
+                background: linear-gradient(to right, rgba(255,251,235,0.92), rgba(255,247,237,0.85));
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gelap bg-terang">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-utama flex items-center">
+                <i class="fa fa-shopping-bag mr-2"></i>
+                <span>UMKM Kreatif</span>
+            </a>
+
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#beranda" class="hover:text-utama transition-colors">Beranda</a>
+                <a href="#produk" class="hover:text-utama transition-colors">Produk</a>
+                <a href="#tentang" class="hover:text-utama transition-colors">Tentang Kami</a>
+                <a href="#kontak" class="hover:text-utama transition-colors">Kontak</a>
+            </div>
+
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-4 font-medium">
+                <a href="#beranda" class="py-2 hover:text-utama transition-colors">Beranda</a>
+                <a href="#produk" class="py-2 hover:text-utama transition-colors">Produk</a>
+                <a href="#tentang" class="py-2 hover:text-utama transition-colors">Tentang Kami</a>
+                <a href="#kontak" class="py-2 hover:text-utama transition-colors">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bagian Beranda dengan Gambar Latar -->
+    <section id="beranda" class="pt-28 pb-20 md:pt-40 md:pb-32 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1556740755-069a40165b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                 alt="Latar Belakang" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-overlay"></div>
+        </div>
+
+        <div class="container mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-[clamp(2.2rem,5vw,3.8rem)] font-bold leading-tight text-shadow mb-5">
+                    Produk Lokal <br> Kualitas Terjamin
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-9 max-w-xl mx-auto md:mx-0">
+                    Dukung usaha lokal dengan memilih produk buatan tangan kami. Berkualitas, ramah lingkungan, dan dibuat dengan penuh cinta.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#produk" class="bg-utama text-white px-9 py-3.5 rounded-full font-semibold shadow-lg btn-anim">
+                        Lihat Produk
+                    </a>
+                    <a href="#kontak" class="bg-white border-2 border-utama text-utama px-9 py-3.5 rounded-full font-semibold shadow-md btn-anim">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Produk Unggulan" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto transform hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Produk Unggulan -->
+    <section id="produk" class="py-18 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-[clamp(1.6rem,3vw,2.6rem)] font-bold mb-4">Produk Unggulan Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pilihan produk terbaik yang dibuat dengan bahan berkualitas dan pengerjaan teliti</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produk 1" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Produk Lezat 1</h3>
+                        <p class="text-gray-600 mb-4">Rasa otentik, bahan alami tanpa pengawet buatan.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-utama">Rp 35.000</span>
+                            <a href="#" class="bg-utama/10 text-utama px-4 py-2 rounded-lg font-medium hover:bg-utama/20 transition-colors">
+                                <i class="fa fa-shopping-cart mr-1"></i> Beli
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produk 2" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Produk Kreatif 2</h3>
+                        <p class="text-gray-600 mb-4">Kerajinan tangan unik cocok untuk hadiah.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-utama">Rp 75.000</span>
+                            <a href="#" class="bg-utama/10 text-utama px-4 py-2 rounded-lg font-medium hover:bg-utama/20 transition-colors">
+                                <i class="fa fa-shopping-cart mr-1"></i> Beli
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1581923956446-1d17b0f8c8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produk 3" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Produk Spesial 3</h3>
+                        <p class="text-gray-600 mb-4">Pilihan paling favorit dari pelanggan kami.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-utama">Rp 50.000</span>
+                            <a href="#" class="bg-utama/10 text-utama px-4 py-2 rounded-lg font-medium hover:bg-utama/20 transition-colors">
+                                <i class="fa fa-shopping-cart mr-1"></i> Beli
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Tentang Kami -->
+    <section id="tentang" class="py-18 px-4 bg-amber-50">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tentang Kami" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">Tentang Usaha Kami</h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Kami adalah usaha lokal yang berdiri sejak tahun 2020 di Palembang. Fokus kami adalah menyediakan produk berkualitas tinggi yang dibuat dengan bahan-bahan pilihan dari sumber terpercaya.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Setiap produk yang kami buat diproses dengan teliti, menjaga kualitas dan keaslian cita rasa serta nilai budaya lokal. Dukungan Anda sangat berarti bagi perkembangan usaha kami dan perekonomian daerah.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-utama text-xl"></i>
+                            <span>Bahan Berkualitas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-utama text-xl"></i>
+                            <span>Produk Lokal</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa fa-check-circle text-utama text-xl"></i>
+                            <span>Pelayanan Terbaik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <section id="kontak" class="py-18 px-4">
+        <div class="container mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-3">Hubungi Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Untuk pemesanan dalam jumlah banyak, pertanyaan produk, atau kerjasama, silakan hubungi kami melalui saluran berikut</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <a href="https://wa.me/6281234567890" target="_blank" class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <i class="fa fa-whatsapp text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">WhatsApp</h3>
+                    <p class="text-gray-600">0812-3456-7890</p>
+                </a>
+                <a href="https://instagram.com/namaakunmu" target="_blank" class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <i class="fa fa-instagram text-4xl text-pink-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Instagram</h3>
+                    <p class="text-gray-600">@rkhhhhh</p>
+                </a>
+                <a href="#" class="bg-white p-8 rounded-xl shadow-md card-hover">
+                    <i class="fa fa-map-marker text-4xl text-red-600 mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2">Lokasi</h3>
+                    <p class="text-gray-600">Palembang, Sumatera Selatan</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gelap text-white py-9 px-4">
+        <div class="container mx-auto text-center">
+            <p class="text-lg font-semibold mb-4">UMKM Kreatif Palembang</p>
+            <p class="text-gray-400 text-sm">© 2026 Hak Cipta Dilindungi | Dibuat dengan dukungan produk lokal</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
